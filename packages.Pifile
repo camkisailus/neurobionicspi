@@ -9,7 +9,7 @@ RUN apt-get -y install mesa-common-dev libgl1-mesa-dev libglu1-mesa-dev
 # Downgrade CMake to 3.17.5
 RUN bash -c "wget https://cmake.org/files/v3.17/cmake-3.17.5.zip"
 RUN bash -c "unzip cmake-3.17.5.zip -d /home/${user}"
-RUN bash -c "cd /home/${user}/cmake-3.17 && cmake . && make && sudo make install"
+RUN bash -c "cd /home/${user}/cmake-3.17.5 && cmake . && make && sudo make install"
 
 # Install LCM
 RUN bash -c "git clone https://github.com/lcm-proj/lcm.git /home/${user}/lcm"
