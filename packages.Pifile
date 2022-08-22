@@ -5,6 +5,12 @@ RUN apt-get -y install build-essential wget dkms cmake\
     libgsl-dev libjpeg-dev default-jdk doxygen code 
 #RUN apt-get -y install gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
 RUN apt-get -y install mesa-common-dev libgl1-mesa-dev libglu1-mesa-dev 
+
+# Downgrade CMake to 3.17.5
+RUN bash -c "wget https://cmake.org/files/v3.17/cmake-3.17.5.zip"
+RUN bash -c "unzip cmake-3.17.5.zip -d /home/${user}"
+RUN bash -c "cd /home/${user}/cmake-3.17 && cmake . && make && sudo make install"
+
 # Install LCM
 RUN bash -c "git clone https://github.com/lcm-proj/lcm.git /home/${user}/lcm"
 RUN bash -c "mkdir /home/${user}/lcm/build"
@@ -52,11 +58,6 @@ RUN apt-get install -y python3-smbus
 RUN bash -c "python3 -m pip install pyzmq"
 RUN bash -c "git clone https://github.com/jmontp/rtplot.git /home/${user}/rtplot"
 RUN bash -c "python3 -m pip install /home/${user}/rtplot/"
-
-# Downgrade CMake to 3.17.5
-RUN bash -c "wget https://cmake.org/files/v3.17/cmake-3.17.5.zip"
-RUN bash -c "unzip cmake-3.17.5.zip -d /home/${user}"
-RUN bash -c "cd /home/${user}/cmake-3.17 && cmake . && make && sudo make install"
 ##################################
 
 
