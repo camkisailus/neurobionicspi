@@ -1,8 +1,8 @@
 # Add bash commands to install required packages
-RUN apt-get -y install build-essential wget dkms cmake<=3.17.5\
+RUN apt-get -y install build-essential wget dkms cmake\
     autoconf automake autotools-dev gdb libglib2.0-dev libgtk2.0-dev \
     libusb-dev libusb-1.0-0-dev freeglut3-dev libboost-dev libatlas-base-dev \
-    libgsl-dev libjpeg-dev default-jdk doxygen code
+    libgsl-dev libjpeg-dev default-jdk doxygen code libdc1394-dev
 #RUN apt-get -y install gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
 RUN apt-get -y install mesa-common-dev libgl1-mesa-dev libglu1-mesa-dev 
 # Install LCM
