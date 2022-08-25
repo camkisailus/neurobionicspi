@@ -57,6 +57,8 @@ RUN bash -c "python3 -m pip install /home/${user}/rtplot/"
 # Downgrade CMake to 3.17.5
 RUN bash -c "wget https://cmake.org/files/v3.17/cmake-3.17.5.zip"
 RUN bash -c "unzip cmake-3.17.5.zip -d /home/${user}"
+
+RUN bash -c "git clone https://gitlab.eecs.umich.edu/rob102-staff/botlab-bin.git"
 ##################################
 
 
