@@ -43,7 +43,7 @@ if [ ! -f "/etc/network.true" ]; then
 	sudo reboot now
 fi
 
-sudo ./home/pi/botlab-bin/launch_botlab.sh
+#sudo ./home/pi/botlab-bin/launch_botlab.sh
 
 exit 0
 EOF
