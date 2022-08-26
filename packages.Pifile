@@ -58,7 +58,9 @@ RUN bash -c "python3 -m pip install /home/${user}/rtplot/"
 # RUN bash -c "wget https://cmake.org/files/v3.17/cmake-3.17.5.zip"
 # RUN bash -c "unzip cmake-3.17.5.zip -d /home/${user}"
 
+# Clone botlab binaries and web-app code
 RUN bash -c "git clone https://github.com/rob102-staff/botlab-bin.git /home/${user}/botlab-bin"
+RUN bach -c "git clone https://github.com/rob102-staff/mbot-omni-app.git /home/${user}/mbot-omni-app"
 ##################################
 
 
